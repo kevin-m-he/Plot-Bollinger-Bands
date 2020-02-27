@@ -98,6 +98,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-##https://medium.com/python-data/setting-up-a-bollinger-band-with-python-28941e2fa300
