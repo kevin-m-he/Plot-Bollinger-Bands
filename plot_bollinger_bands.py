@@ -20,10 +20,10 @@ def plotstock(ticker,n):
     #Get yahoofinance stock data and put into a dataframe
     df = pdr.get_data_yahoo(ticker.upper(),start=time_frame,end=today)
     
-    #Separate dataframe by columns of various financial info: high,low,close,open,volume,etc
+    #get the adj_close from the dataframe
     adj_close = df['Adj Close']
     
-    #Create a new column in df, 3 day simple moving average and the standard deviation
+    #Create a new column in df, 10 day simple moving average and the standard deviation
     df['10 Day MA'] = adj_close.rolling(10).mean()
     df['10 Day MA STDEV'] = adj_close.rolling(10).std()
     moving_average = df['10 Day MA']
